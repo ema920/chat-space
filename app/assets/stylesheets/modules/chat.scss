@@ -71,9 +71,7 @@
           float: left;
           height: 50px;
           width: calc(100% - 150px);
-      }
-      &__messages {
-          padding-left: 10px;
+          padding-left: 0px 40px 0px 10px;
           font-size: 16px;
           color: #434A54;
       }
@@ -99,6 +97,7 @@
           height: 50px;
           margin-left: 15px;
           padding: 0 30px;
+          width: 100px;
       }
   }
 }
