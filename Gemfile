@@ -57,3 +57,9 @@ gem "haml-rails", ">= 1.0", '<= 2.0.1'
 
 #font-awesome-の導入
 gem "font-awesome-rails"
+
+gem 'devise'
+
+#Carrierwaveの導入
+gem 'carrierwave'
+gem 'mini_magick'  #画像を合成したり、リサイズなどの編集が可能
