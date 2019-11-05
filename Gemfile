@@ -63,3 +63,8 @@ gem 'devise'
 #Carrierwaveの導入
 gem 'carrierwave'
 gem 'mini_magick'  #画像を合成したり、リサイズなどの編集が可能
+# Use jquery as the JavaScript library
+gem 'jquery-rails'
+
+# Use jquery as the JavaScript library
+gem 'jquery-rails'
