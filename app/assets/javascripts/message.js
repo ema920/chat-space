@@ -1,5 +1,4 @@
 $(function(){
-<<<<<<< Updated upstream
   function buildHTML(message){
     if ( message.image ) {
       var html =
@@ -66,6 +65,5 @@ $(function(){
     return false;
   })
 })
-=======
-}
->>>>>>> Stashed changes
+
+
