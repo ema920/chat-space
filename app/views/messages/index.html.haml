@@ -6,15 +6,13 @@
     .header
       .left-header
         .left-header__title
-          グループ名
-        %ul.left-header__members
+          %h2.left-header__title__current-group
+          = @group.name
+        .left-header__members
           Member：
-          %li.member
-            メンバー名
-          %li.member
-            メンバー名
-          %li.member
-            メンバー名
+          -@group.users.each do|user|
+            %ui.left-header__title__members__list #{user.name}
+           
       .right-header
         .right-header__button
           Edit
@@ -23,7 +21,7 @@
       = render partial: 'message', collection: @messages
 
     .form
-      = form_for [@group, @message] do |f|
+      = form_for [@group, @message],id: 'newform' do |f|
         = f.text_field :content, class: 'form__message', placeholder: 'type a message'
         .form__mask
           = f.label :image, class: 'form__mask__image' do
