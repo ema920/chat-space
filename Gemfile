@@ -68,3 +68,5 @@ gem 'jquery-rails'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+
+gem 'pry-rails'

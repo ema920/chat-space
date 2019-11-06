@@ -26,9 +26,7 @@ $(function() {
     $(".js-add-user").append(html);
   }
   function addMember(userId) {
-    let html = `
-    　<input value="${userId}" name="group[user_ids][]" type="hidden" id="group_user_ids_${userId}" />
-    `;
+    let html = `<input value="${userId}" name="group[user_ids][]" type="hidden" id="group_user_ids_${userId}" />`;
     $(`#${userId}`).append(html);
   }
   $("#user-search-field").on("keyup", function() {
@@ -38,17 +36,17 @@ $(function() {
       url: "/users",
       data: { keyword: input },
       dataType: "json"
+      
     })
+    
       .done(function(users) {
         $("#user-search-result").empty();
-
         if (users.length !== 0) {
           users.forEach(function(user) {
             addUser(user);
           });
-        } else if (input.length == 0) {
-          return false;
-        } else {
+        } 
+        else {
           addNoUser();
         }
       })
@@ -57,7 +55,6 @@ $(function() {
       });
   });
   $(document).on("click", ".chat-group-user__btn--add", function() {
-    console.log
     const userName = $(this).attr("data-user-name");
     const userId = $(this).attr("data-user-id");
     $(this)

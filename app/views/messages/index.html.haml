@@ -14,7 +14,9 @@
             %ui.left-header__title__members__list #{user.name}
            
       .right-header
+      
         .right-header__button
+        = link_to edit_group_path(@group) do
           Edit
           
     .messages
