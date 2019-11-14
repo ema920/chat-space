@@ -26,30 +26,29 @@ $(function () {
   };
 
   
-     $('#new_message').on('submit', function(e){
-          e.preventDefault()
-          var formData = new FormData(this);
-          var url = $(this).attr('action')
-          $.ajax({
-              url: url,
-              type: "POST",
-              data: formData,
-              dataType: 'json',
-              processData: false,
-              contentType: false,
-          })
-           .done(function(data){
-             console.log(data)
-             var html = buildHTML(data);
-             $('.messages').append(html);
-             $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');         
-             $('form')[0].reset();
-          })
-            .fail(function(){
-              alert('error');
-          });
-          return false;
-     });
+   $('#new_message').on('submit', function(e){
+        e.preventDefault()
+        var formData = new FormData(this);
+        var url = $(this).attr('action')
+        $.ajax({
+            url: url,
+            type: "POST",
+            data: formData,
+            dataType: 'json',
+            processData: false,
+            contentType: false,
+        })
+         .done(function(data){
+           var html = buildHTML(data);
+           $('.messages').append(html);
+           $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');         
+           $('form')[0].reset();
+        })
+          .fail(function(){
+            alert('error');
+        });
+        return false;
+   });
 
       
     var reloadMessages = function () {
@@ -64,10 +63,9 @@ $(function () {
           data: {last_id: last_message_id} 
         })
         .done(function (messages) { 
-          console.log(messages)
           var insertHTML = '';
           messages.forEach(function (message) {
-            insertHTML = buildHTML(message); 
+            insertHTML = buildHTML(message);
             $('.messages').append(insertHTML);
             $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
           });
@@ -77,6 +75,6 @@ $(function () {
         });
       };
     };
-    setInterval(reloadMessages, 5000);
+    setInterval(reloadMessages, 10000);
    });
 });
